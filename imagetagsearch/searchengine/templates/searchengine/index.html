@@ -1,0 +1,35 @@
+{% extends 'searchengine/base.html'%}
+{% load staticfiles%}
+{% block content %}
+<div class="container page-header hpad">
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-8 body">
+
+<h1>   Enter a tag to search an image </h1>
+<form method="GET">
+    <input type="text" name="search"><br/>
+ 
+ 
+
+
+<input type="submit" value="Submit" />
+</form>	
+{%if not image%}
+<h4> No results found </h4>
+{% else %}
+<h4> Found {{count}} records</h4>
+{% for i in image%}
+
+{% for j in i.image_list%}
+
+<img src="/static/images/{{j}}" height="400px" width="600px"/><br/><br/></br>
+{%endfor%}
+{% endfor %}
+{% endif %}		
+</div>
+</div>
+</div>
+
+{% endblock %}
