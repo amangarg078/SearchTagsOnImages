@@ -21,8 +21,8 @@ def index(request):
                 if j not in image_all:
                     image_all.append(j)
         count=len(image_all)
-        
-    return render(request,'searchengine/index.html',{'image':image_all,'count':count})
+        search_string=', '.join(search)
+    return render(request,'searchengine/index.html',{'search':search_string,'image':image_all,'count':count})
 
 def tagDetails(request,tag_name):
     
