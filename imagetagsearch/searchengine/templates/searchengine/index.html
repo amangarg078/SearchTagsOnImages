@@ -22,10 +22,9 @@
 <h4> Found {{count}} records</h4>
 {% for i in image%}
 
-{% for j in i.image_list%}
 
-<img src="/static/images/{{j}}" height="400px" width="600px"/><br/><br/></br>
-{%endfor%}
+<img src="/static/images/{{i}}" height="400px" width="600px"/><br/><br/></br>
+
 {% endfor %}
 {% endif %}		
 </div>
